@@ -62,20 +62,16 @@ class UI {
 class Store {
   // Get books
   static getBooks() {
-    console.log("get books");
     let books;
     if (localStorage.getItem("books") === null) {
       books = [];
-      console.log("if:", books);
     } else {
       books = JSON.parse(localStorage.getItem("books"));
-      console.log("else:", books);
     }
     return books;
   }
   // Add books
   static addBooks(book) {
-    console.log(book);
     const books = Store.getBooks();
     books.push(book);
     localStorage.setItem("books", JSON.stringify(books));
